@@ -3,7 +3,7 @@
     <h2>{{botObj.botName}}</h2>
     <p>Attack: {{botObj.attackVal}}</p>
     <p>Health: {{botObj.healthVal}}</p>
-    <button> SELECT </button>
+    <button @click='onSelect(botObj)'> SELECT </button>
     <button @click='retireBot(index)'> RETIRE</button>
     <hr>
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  props: ['botObj', 'retireBot', 'index']
+  props: ['botObj', 'retireBot', 'index', 'onSelect']
   
 }
 </script>
