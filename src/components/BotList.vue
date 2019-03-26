@@ -2,13 +2,17 @@
   <div>
     <p>
       Bot #1: {{this.bot1.botName}}
+      <!-- {{this.bot1}} -->
     </p>
     <p>
       Bot #2: {{this.bot2.botName}}
+      <!-- {{this.bot2}} -->
     </p>
     <button @click='battle'> BATTLE </button>
     <button @click='onClear'> CLEAR </button>
-    <bot v-for='(botObj, i) in this.allBots' :key='i' :botObj='botObj' :index='i' :retireBot='retireBot' :onSelect='onSelect' />
+    <secion class='bots'>
+      <bot v-for='(botObj, i) in this.allBots' :key='i' :botObj='botObj' :index='i' :retireBot='retireBot' :onSelect='onSelect' />
+    </secion>
   </div>
 </template>
 
@@ -46,8 +50,9 @@ export default {
       } else {
         alert(`${this.bot2.botName} wins!`)
       }
+      this.bot1 = []
+      this.bot2 = []
     }
-    
   },
   components: { Bot : Bot}
   

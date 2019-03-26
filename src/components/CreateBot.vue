@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h1>create bot component</h1>
+  <div class='createbot-card'>
     <div>
       <p>Bot Name</p>
       <input type="text" v-model='botName'>
@@ -37,3 +36,8 @@ export default {
   
 }
 </script>
+
+<style>
+
+
+</style>
