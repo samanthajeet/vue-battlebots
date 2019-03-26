@@ -1,8 +1,12 @@
 <template>
   <div>
-    {{this.bot1}}
-    {{this.bot2}}
-    <button> BATTLE </button>
+    <p>
+      Bot #1: {{this.bot1.botName}}
+    </p>
+    <p>
+      Bot #2: {{this.bot2.botName}}
+    </p>
+    <button @click='battle'> BATTLE </button>
     <button @click='onClear'> CLEAR </button>
     <bot v-for='(botObj, i) in this.allBots' :key='i' :botObj='botObj' :index='i' :retireBot='retireBot' :onSelect='onSelect' />
   </div>
@@ -23,7 +27,6 @@ export default {
 
   methods: {
     retireBot: function(index){
-      console.log(index)
       this.allBots.splice(index,1)
     },
     onSelect: function(bot) {
@@ -36,6 +39,13 @@ export default {
     onClear: function(){
       this.bot1 = []
       this.bot2 = []
+    },
+    battle: function(){
+      if(this.bot1.attackVal > this.bot2.attackVal){
+        alert(`${this.bot1.botName} wins!`)
+      } else {
+        alert(`${this.bot2.botName} wins!`)
+      }
     }
     
   },
