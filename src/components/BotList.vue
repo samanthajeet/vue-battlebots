@@ -2,6 +2,8 @@
   <div>
     {{this.bot1}}
     {{this.bot2}}
+    <button> BATTLE </button>
+    <button @click='onClear'> CLEAR </button>
     <bot v-for='(botObj, i) in this.allBots' :key='i' :botObj='botObj' :index='i' :retireBot='retireBot' :onSelect='onSelect' />
   </div>
 </template>
@@ -30,6 +32,10 @@ export default {
       } else {
         this.bot2 = bot
       }
+    },
+    onClear: function(){
+      this.bot1 = []
+      this.bot2 = []
     }
     
   },
