@@ -1,11 +1,11 @@
 <template>
   <div class='botcard'>
-    <h2>{{botObj.botName}}</h2>
+    <h5>{{botObj.botName}}</h5>
     <p>Attack: {{botObj.attackVal}}</p>
     <p>Health: {{botObj.healthVal}}</p>
     <section class='bot-btns'>
-      <button @click='onSelect(botObj)'> SELECT </button>
-      <button @click='retireBot(index)'> RETIRE</button>
+      <button @click='onSelect(botObj)' class='botbtn'> select </button>
+      <button @click='retireBot(index)' class='botbtn'> retire </button>
     </section>
 
   </div>

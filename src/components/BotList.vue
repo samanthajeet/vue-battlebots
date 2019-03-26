@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <p>
-      Bot #1: {{this.bot1.botName}}
+  <div class='botlist'>
+    <h4>
+      Bot #1 : <span class='bot1'> {{this.bot1.botName}}</span>
       <!-- {{this.bot1}} -->
-    </p>
-    <p>
-      Bot #2: {{this.bot2.botName}}
+    </h4>
+    <h4>
+      Bot #2 : <span class='bot2'> {{this.bot2.botName}}</span>
       <!-- {{this.bot2}} -->
-    </p>
-    <button @click='battle'> BATTLE </button>
-    <button @click='onClear'> CLEAR </button>
+    </h4>
+
+      <button @click='battle' class='botlistbtn'> battle </button>
+      <button @click='onClear' class='botlistbtn'> clear </button>
+
     <secion class='bots'>
       <bot v-for='(botObj, i) in this.allBots' :key='i' :botObj='botObj' :index='i' :retireBot='retireBot' :onSelect='onSelect' />
     </secion>
